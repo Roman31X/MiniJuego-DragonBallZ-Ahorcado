@@ -119,9 +119,6 @@ public class ControlDificultad implements MouseListener,ActionListener{
         }
         juego = new ControlJuego(batalla,texto);
         juego.CambioPanel(1,texto,'X');
-        for (int i = 0; i < texto.length; i++) {
-            System.out.print(texto[i]);
-        }
         fondoMusica.stop();
         try {
             juego.Play();

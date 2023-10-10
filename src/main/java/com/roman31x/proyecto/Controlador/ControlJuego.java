@@ -125,7 +125,6 @@ public class ControlJuego implements MouseListener,ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         String accion = e.getActionCommand();
-        System.out.println(contador);
         switch(accion){
             case "A": campo.A.setEnabled(false);
                     CambioPanel(2,otroNuevo,'A');
@@ -743,9 +742,6 @@ public class ControlJuego implements MouseListener,ActionListener{
         int randon = (int)(Math.random()*9);
         otroNuevo = personaje.Nombre(numero, randon);
         CambioPanel(1,otroNuevo,'X');
-        for (int i = 0; i < otroNuevo.length; i++) {
-            System.out.print(otroNuevo[i]);
-        }
 
         campo.Cabeza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Partes/Vacio.png")));
         campo.Pecho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Partes/Vacio.png")));
