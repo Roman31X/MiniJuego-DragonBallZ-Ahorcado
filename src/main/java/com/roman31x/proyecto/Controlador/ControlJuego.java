@@ -298,7 +298,6 @@ public class ControlJuego implements MouseListener,ActionListener{
                 contadorDos = 0;
                 nivelPoder = 0;
             break;
-
         }
     }
     
@@ -778,6 +777,7 @@ public class ControlJuego implements MouseListener,ActionListener{
         campo.Y.setEnabled(true);
         campo.Z.setEnabled(true);
         contador = 0;
+        contadorDos = 0;
     }
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -797,6 +797,7 @@ public class ControlJuego implements MouseListener,ActionListener{
             }
             campo.setVisible(false);
             contador = 0;
+            contadorDos = 0;
         }else if(e.getSource() == campo.Refrescar){
             NuevoNivel();
         }
