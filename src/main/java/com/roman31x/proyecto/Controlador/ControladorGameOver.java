@@ -49,6 +49,29 @@ public class ControladorGameOver implements MouseListener{
         fondoMusica.start();
     }
     
+    public Clip ReproducirAudio(int dato)throws LineUnavailableException{
+        InputStream ruta = null;
+        switch(dato){
+            case 1:
+                ruta =getClass().getResourceAsStream("/AudioJuego/Continuar.wav");
+                break;
+            case 2:
+                ruta =getClass().getResourceAsStream("/AudioJuego/SalirFin.wav");
+                break;
+        }
+        
+        Clip clip;
+        clip = AudioSystem.getClip();
+        try {
+            clip.open(AudioSystem.getAudioInputStream(ruta));
+        } catch (UnsupportedAudioFileException ex) {
+            System.out.println(ex);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        } 
+        return clip;
+    }
+    
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == finjuego.salir){
@@ -93,11 +116,23 @@ public class ControladorGameOver implements MouseListener{
         if(e.getSource() == finjuego.continuar){
             finjuego.esfera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosImagen/IcoEsfera.png")));
             finjuego.continuar.setForeground(new java.awt.Color(241, 14, 14));
-            finjuego.continuar.setFont(new java.awt.Font("Stencil", 1, 24));            
+            finjuego.continuar.setFont(new java.awt.Font("Stencil", 1, 24));  
+            try {
+                musica = ReproducirAudio(1);
+            } catch (LineUnavailableException ex) {
+                Logger.getLogger(ControlDificultad.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            musica.start();
         }else if(e.getSource() == finjuego.salir){
             finjuego.esfera2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosImagen/IcoEsfera.png")));
             finjuego.salir.setForeground(new java.awt.Color(241, 14, 14));
             finjuego.salir.setFont(new java.awt.Font("Stencil", 1, 24));
+            try {
+                musica = ReproducirAudio(2);
+            } catch (LineUnavailableException ex) {
+                Logger.getLogger(ControlDificultad.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            musica.start();
         }
     }
 
@@ -107,10 +142,12 @@ public class ControladorGameOver implements MouseListener{
             finjuego.esfera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosImagen/Vacio.png")));
             finjuego.continuar.setForeground(new java.awt.Color(255, 255, 0));
             finjuego.continuar.setFont(new java.awt.Font("Stencil", 1, 18));
+            musica.stop();
         }else if(e.getSource() == finjuego.salir){
             finjuego.esfera2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosImagen/Vacio.png")));
             finjuego.salir.setForeground(new java.awt.Color(255, 255, 0));
             finjuego.salir.setFont(new java.awt.Font("Stencil", 1, 18));
+            musica.stop();
         }
     }
     
