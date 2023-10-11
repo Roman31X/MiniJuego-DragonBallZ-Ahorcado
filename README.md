@@ -15,6 +15,6 @@ Este es un mini juego de ahorcado basa en los personajes de Dragon Ball Z, el ob
 
 ## PRUEBA DE EJECUCIÓN
 
-<img src="">
+<img src="https://github.com/Roman31X/MiniJuego-DragonBallZ-Ahorcado/blob/master/src/main/resources/PruebaEjecucionGIF/Prueba.gif">
 
 </div>
