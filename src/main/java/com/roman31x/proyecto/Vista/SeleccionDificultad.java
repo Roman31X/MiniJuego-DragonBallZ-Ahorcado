@@ -85,8 +85,7 @@ public class SeleccionDificultad extends javax.swing.JFrame {
 
         Atras.setBackground(new java.awt.Color(255, 255, 255));
         Atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconosImagen/atras.png"))); // NOI18N
-        Atras.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
-        jPanel1.add(Atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPanel1.add(Atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         Silla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dificultad/Silla.png"))); // NOI18N
         jPanel1.add(Silla, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 170, 222));

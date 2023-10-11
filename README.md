@@ -10,3 +10,11 @@ Este es un mini juego de ahorcado basa en los personajes de Dragon Ball Z, el ob
 * __LIBRERIA SWING :__ paquetes de recursos para la implemetacion grafica.
 * __POO :__ aplicacion de los pilares de Programacion orientada a Objetos. 
 * __CLEAN CODE :__ cuanta con una estructura definida en MVC - identación.
+
+<div>
+
+## PRUEBA DE EJECUCIÓN
+
+<img src="">
+
+</div>
